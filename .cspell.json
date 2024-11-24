@@ -1,0 +1,50 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "ignorePaths": [
+    "**/node_modules/**",
+    "bun.lockb",
+    "cspell.json",
+    "package.json",
+    "**.stories.tsx",
+    "gen/**",
+    "playwright-report/**",
+    "**/tsconfig.tsbuildinfo",
+    "docker/**",
+    "docker-compose.yml",
+    "packages/shared/constants/env/**",
+    "makefile"
+  ],
+  "allowCompoundWords": true,
+  "dictionaryDefinitions": [],
+  "ignoreRegExpList": ["/\\d+\\.\\d+\\.\\d+/"],
+  "ignoreWords": [
+    "bun",
+    "workspace",
+    "GlobalRegistrator",
+    "registrator",
+    "Elysia",
+    "elysia",
+    "elysiajs",
+    "data-testid",
+    "sonner",
+    "commmune",
+    "Enquete",
+    "enquete",
+    "vhidden",
+    "signup",
+    "idaas",
+    "mypage",
+    "vaul",
+    "embla",
+    "unparse",
+    "date-testid"
+  ],
+  "patterns": [
+    {
+      "name": "camelCase",
+      "pattern": "[a-z]+(?:[A-Z][a-z]+)+"
+    }
+  ],
+  "words": ["gcloud", "kaniko"]
+}

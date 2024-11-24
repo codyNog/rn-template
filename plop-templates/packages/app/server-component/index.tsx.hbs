@@ -1,0 +1,12 @@
+import _styles from "./index.module.css";
+import { getI18n } from "shared/libs/i18n/server";
+
+// biome-ignore lint:
+type Props = {
+};
+
+// biome-ignore lint:
+export const {{pascalCase name}} = async ({}: Props) => {
+    const _t = await getI18n();
+return <div>{{pascalCase name}}</div>
+};

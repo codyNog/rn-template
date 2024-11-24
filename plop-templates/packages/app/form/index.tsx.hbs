@@ -1,0 +1,34 @@
+import { use{{pascalCase name}}Form } from "@/components/{{pascalCase name}}Form/hooks";
+import type { Props } from "@/components/{{pascalCase name}}Form/types";
+import { forwardRef } from "react";
+import { YStack, Text, Button, Input, VisuallyHidden, Form } from "@/components/ui"
+import { Controller } from "react-hook-form";
+
+/**
+ * Form Component for create or update {{pascalCase name}}.
+ * @param {Props} props {@link Props}
+ */
+export const {{pascalCase name}}Form = forwardRef<HTMLFormElement, Props>((props, _ref) => {
+  const {onSubmit, errors, control, t} = use{{pascalCase name}}Form(props);
+  return (
+  <Form> 
+  <YStack>
+    <Text>{{pascalCase name}}Form</Text>
+    {errors && <Text>errors</Text>}
+      <Controller
+        control={control}
+        name="id"
+        render={({ field }) => (
+          <VisuallyHidden>
+            <Input {...field} error={errors.id?.message && t(errors.id.message)} />
+          </VisuallyHidden>
+        )}
+      />
+    <Form.Trigger asChild>
+    <Button onClick={onSubmit}>
+      {t("submit")}
+    </Button>
+    </Form.Trigger>
+  </YStack>
+  </Form>)
+});

@@ -1,0 +1,11 @@
+'use client';
+import { forwardRef } from 'react';
+import { Text } from 'tamagui';
+
+// biome-ignore lint:
+type Props = {}
+
+// biome-ignore lint:
+export const {{pascalCase name}} = forwardRef<any, Props>((_props: Props, ref) => {
+  return <Text ref={ref}>{{pascalCase name}}</Text>
+});

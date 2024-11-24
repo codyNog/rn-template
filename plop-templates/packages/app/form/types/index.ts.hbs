@@ -1,0 +1,15 @@
+import { zodResolver } from "@hookform/resolvers/zod";
+import z from "zod";
+
+const {{name}}FormValuesSchema = z.object({
+  id: z.string().optional(),
+});
+
+export type {{pascalCase name}}FormValues = z.infer<typeof {{name}}FormValuesSchema>;
+
+export const {{name}}FormResolver = zodResolver({{name}}FormValuesSchema);
+
+export type Props = {
+  action: (value: {{pascalCase name}}FormValues) => Promise<void>;
+  defaultValues?: {{pascalCase name}}FormValues;
+};

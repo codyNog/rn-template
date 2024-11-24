@@ -1,0 +1,16 @@
+{
+  "ignore": [
+    "**/plopfile.cjs",
+    "gen/**",
+    "packages/app/middleware/index.ts",
+    "**/test.setup.ts"
+  ],
+  "ignoreDependencies": [
+    "@markuplint/*",
+    "shared",
+    "npm-run-all",
+    "happy-dom",
+    "@happy-dom/global-registrator",
+    "openapi-typescript"
+  ]
+}
