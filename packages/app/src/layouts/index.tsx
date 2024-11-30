@@ -8,7 +8,8 @@ import { useFonts } from "expo-font";
 import { SplashScreen, Stack } from "expo-router";
 import { useEffect } from "react";
 import { useColorScheme } from "react-native";
-import { UIProvider } from "ui";
+import { SWRConfig } from "swr";
+import { Toast, UIProvider } from "ui";
 export { ErrorBoundary } from "expo-router";
 
 export const unstable_settings = {
@@ -47,10 +48,11 @@ export default function RootLayout() {
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
       <UIProvider>
-        <Stack>
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <SWRConfig>
+        <Stack screenOptions={{headerShown: false}}>
           <Stack.Screen name="modal" options={{ presentation: "modal" }} />
         </Stack>
+        </SWRConfig>
       </UIProvider>
     </ThemeProvider>
   );

@@ -1,5 +1,5 @@
-import { IconSymbol } from "ui/IconSymbol";
 import { BottomTabs } from "ui/BottomTabs";
+import { IconSymbol } from "ui/IconSymbol";
 
 export default function TabLayout() {
   return (

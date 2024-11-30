@@ -1,18 +1,14 @@
+import en from "gen/i18n/en-US";
+import ja from "gen/i18n/ja-JP";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
 const resources = {
   en: {
-    translation: {
-      welcome: "Welcome",
-      hello: "Hello, {{name}}",
-    },
+    translation: en,
   },
   ja: {
-    translation: {
-      welcome: "ようこそ",
-      hello: "こんにちは、{{name}}さん",
-    },
+    translation: ja,
   },
 };
 

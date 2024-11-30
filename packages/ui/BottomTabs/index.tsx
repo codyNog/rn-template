@@ -1,10 +1,10 @@
 "use client";
-import { forwardRef, type ComponentProps } from "react";
-import { Tabs } from "expo-router";
-import { Platform } from "react-native";
 import type { BottomTabBarButtonProps } from "@react-navigation/bottom-tabs";
 import { PlatformPressable } from "@react-navigation/elements";
 import * as Haptics from "expo-haptics";
+import { Tabs } from "expo-router";
+import { type ComponentProps, forwardRef } from "react";
+import { Platform } from "react-native";
 import TabBarBackground from "../TabBarBackground";
 
 function HapticTab(props: BottomTabBarButtonProps) {

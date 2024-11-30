@@ -156,18 +156,18 @@ module.exports = (plop) => {
     actions: [
       {
         type: "add",
-        path: "src/screens/{{snakeCase name}}/index.tsx",
+        path: "src/screens/{{name}}/index.tsx",
         templateFile: "../../plop-templates/packages/app/screen/index.tsx.hbs",
       },
       {
         type: "add",
-        path: "src/screens/{{snakeCase name}}/hooks/index.ts",
+        path: "src/screens/{{name}}/hooks/index.ts",
         templateFile:
           "../../plop-templates/packages/app/screen/hooks/index.ts.hbs",
       },
       {
         type: "add",
-        path: "app/{{snakeCase name}}/index.ts",
+        path: "app/{{name}}/index.ts",
         templateFile: "../../plop-templates/packages/app/screen/index.ts.hbs",
       },
     ],

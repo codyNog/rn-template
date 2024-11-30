@@ -12,28 +12,36 @@ const convertCsvToJson = (csvFilePath) => {
     skipEmptyLines: true,
     comments: true,
     complete: (result) => {
-      // 各列ごとのJSONデータを格納するオブジェクト
+      // 言語ごとのJSONデータを格納するオブジェクト
       const jsonDataObject = {};
+
+      // CSVの形式は以下を想定:
+      // key, ja, en, ...
+      // hello, こんにちは, hello, ...
+
+      const languages = result.meta.fields.filter((field) => field !== "key");
+
+      // 各言語ごとにオブジェクトを初期化
+      for (const lang of languages) {
+        jsonDataObject[lang] = {};
+      }
 
       // 各行に対してJSONを生成
       for (const row of result.data) {
-        for (const key of Object.keys(row)) {
-          if (!jsonDataObject[key]) {
-            jsonDataObject[key] = {};
-          }
+        const key = row.key; // keyカラムの値を取得
 
-          jsonDataObject[key][row[key]] = row[key];
+        // 各言語の翻訳を設定
+        for (const lang of languages) {
+          jsonDataObject[lang][key] = row[lang];
         }
       }
 
-      // 各列に対応するJSONをファイルに書き込む
-      for (const key of Object.keys(jsonDataObject)) {
-        const jsonFilePath = `./packages/gen/i18n/${key}.ts`;
+      // 各言語に対応するJSONをファイルに書き込む
+      for (const lang of languages) {
+        const jsonFilePath = `./packages/gen/i18n/${lang}.ts`;
         fs.writeFileSync(
           jsonFilePath,
-          `export default ${JSON.stringify(jsonDataObject[key])} as const;`,
-          null,
-          2,
+          `export default ${JSON.stringify(jsonDataObject[lang], null, 2)} as const;`,
         );
         console.log(
           `Conversion complete. JSON file created at ${jsonFilePath}`,

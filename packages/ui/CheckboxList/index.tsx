@@ -1,6 +1,6 @@
 "use client";
-import { View, YStack, type CheckedState } from "tamagui";
 import { useCallback, useMemo } from "react";
+import { type CheckedState, View, YStack } from "tamagui";
 import { Checkbox } from "../Checkbox";
 
 type Parent = {

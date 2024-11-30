@@ -6,3 +6,5 @@ export { Input } from "./Input";
 export { TextArea } from "./TextArea";
 export { RadioGroup } from "./RadioGroup";
 export { UIProvider } from "./Provider";
+export * from "./Toast";
+export { Link } from "./Link";

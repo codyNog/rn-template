@@ -26,12 +26,6 @@
     "@hookform/resolvers": "^3.9.1",
     "@react-navigation/bottom-tabs": "^7.0.0",
     "@react-navigation/native": "^7.0.0",
-    "@tamagui/config": "^1.116.14",
-    "@tamagui/core": "^1.116.14",
-    "@tamagui/font-inter": "^1.116.14",
-    "@tamagui/lucide-icons": "^1.116.14",
-    "@tamagui/shorthands": "^1.116.14",
-    "@tamagui/themes": "^1.116.14",
     "expo": "~52.0.7",
     "expo-blur": "~14.0.1",
     "expo-constants": "~17.0.3",
@@ -61,7 +55,6 @@
     "react-native-web": "~0.19.13",
     "react-native-webview": "13.12.4",
     "swr": "^2.2.5",
-    "tamagui": "^1.116.14",
     "zod": "^3.23.8"
   },
   "devDependencies": {
