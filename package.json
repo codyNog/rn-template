@@ -45,7 +45,6 @@
     "test": "bun --filter '*' test",
     "gen": "bun run --bun run-p gen:*",
     "gen:i18n": "bun i18n/index.js",
-    "gen:httpClient": "bun openapi/index.ts && orval",
     "knip": "knip",
     "build-check": "bun --filter '*' build-check",
     "update": "npm-check-updates -u & bun --filter '*' update"
