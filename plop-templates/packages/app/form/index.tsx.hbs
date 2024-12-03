@@ -1,7 +1,7 @@
 import { use{{pascalCase name}}Form } from "@/components/{{pascalCase name}}Form/hooks";
 import type { Props } from "@/components/{{pascalCase name}}Form/types";
 import { forwardRef } from "react";
-import { YStack, Text, Button, Input, VisuallyHidden, Form } from "@/components/ui"
+import { YStack, Text, Button, Input, VisuallyHidden, Form } from "ui"
 import { Controller } from "react-hook-form";
 
 /**
@@ -25,7 +25,7 @@ export const {{pascalCase name}}Form = forwardRef<HTMLFormElement, Props>((props
         )}
       />
     <Form.Trigger asChild>
-    <Button onClick={onSubmit}>
+    <Button onPress={onSubmit}>
       {t("submit")}
     </Button>
     </Form.Trigger>
