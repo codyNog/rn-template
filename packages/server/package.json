@@ -2,7 +2,10 @@
   "name": "server",
   "scripts": {
     "dev": "wrangler dev",
-    "deploy": "wrangler deploy --minify"
+    "deploy": "wrangler deploy --minify",
+    "generate": "drizzle-kit generate",
+    "local:migration": "wrangler d1 migrations apply d1-test --local",
+    "remote:migration": "wrangler d1 migrations apply d1-test --remote"
   },
   "dependencies": {
     "hono": "^4.6.12"
