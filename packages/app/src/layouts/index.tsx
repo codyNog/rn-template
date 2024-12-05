@@ -49,9 +49,9 @@ export default function RootLayout() {
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
       <UIProvider>
         <SWRConfig>
-        <Stack screenOptions={{headerShown: false}}>
-          <Stack.Screen name="modal" options={{ presentation: "modal" }} />
-        </Stack>
+          <Stack screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="modal" options={{ presentation: "modal" }} />
+          </Stack>
         </SWRConfig>
       </UIProvider>
     </ThemeProvider>
