@@ -1,5 +1,5 @@
-import { useUsersNewScreen } from "./hooks";
 import { UserForm } from "@/components/UserForm";
+import { useUsersNewScreen } from "./hooks";
 
 const Screen = () => {
   const { action } = useUsersNewScreen();

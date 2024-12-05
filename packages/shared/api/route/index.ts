@@ -1,7 +1,8 @@
 import type { AnyD1Database } from "drizzle-orm/d1";
+import { drizzle } from "drizzle-orm/d1";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
-import { usersRoute } from "./users";
+import { insertUserSchema, users } from "shared/schemas/users";
 
 type Bindings = {
   DB: AnyD1Database;
@@ -33,6 +34,17 @@ export const route = app
   .get("healthz", (c) => {
     return c.text("OK");
   })
-  .route("/users", usersRoute);
+  .get("/users", async (c) => {
+    const db = drizzle(c.env.DB);
+    const result = await db.select().from(users).all();
+    return c.json(result);
+  })
+  .post("/users", async (c) => {
+    const body = await c.req.json();
+    const params = insertUserSchema.parse(body);
+    const db = drizzle(c.env.DB);
+    const result = await db.insert(users).values(params);
+    return c.json(result);
+  });
 
 export type AppType = typeof route;

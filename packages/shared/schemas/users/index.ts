@@ -1,5 +1,5 @@
-import { createInsertSchema, createSelectSchema } from "drizzle-zod";
 import { sqliteTable, text } from "drizzle-orm/sqlite-core";
+import { createInsertSchema, createSelectSchema } from "drizzle-zod";
 import { v7 } from "uuid";
 import { z } from "zod";
 
