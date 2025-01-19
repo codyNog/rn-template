@@ -1,12 +1,15 @@
-import useSWR from "swr";
-import type { Props } from "../types";
+import { useQuery } from "@tanstack/react-query";
 import { rpcClient } from "shared/rpc";
+import type { Props } from "../types";
 
 // biome-ignore lint:
 export const useUserList = ({}: Props) => {
-  const { data: users } = useSWR("/api/users", () =>
-    rpcClient.users.$get().then((res) => res.json()),
-  );
+  const { data: users } = useQuery({
+    queryKey: ["users"],
+    queryFn: async () => {
+      return (await rpcClient.users.$get()).json();
+    },
+  });
 
   return { users };
 };

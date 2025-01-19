@@ -1,8 +1,8 @@
 "use client";
+import { Text, View } from "ui";
 import { useUserList } from "./hooks";
 import _styles from "./index.module.css";
 import type { Props } from "./types";
-import { Text, View } from "ui";
 
 export const UserList = (props: Props) => {
   const { users } = useUserList(props);

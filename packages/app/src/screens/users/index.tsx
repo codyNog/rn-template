@@ -1,5 +1,5 @@
-import { useUsersScreen } from "./hooks";
 import { UserList } from "@/components/UserList";
+import { useUsersScreen } from "./hooks";
 
 const Screen = () => {
   useUsersScreen();

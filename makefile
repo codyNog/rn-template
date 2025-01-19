@@ -5,6 +5,6 @@ setup:
 db-drop:
 	docker exec -it postgres_local psql -U myuser mydatabase -c "DROP SCHEMA public CASCADE; CREATE SCHEMA public;"
 dev:
-	docker-compose up -d && bun app dev
+	bun dev
 start:
 	docker-compose up -d

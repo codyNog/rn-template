@@ -1,23 +1,25 @@
 "use client";
-import useSWR from "swr";
-import { browserStorage } from "../../browser/storage";
+
+import { useQuery } from "@tanstack/react-query";
+
+const storage =
+  process.env.PLATFORM === "mobile"
+    ? (await import("../../mobile/storage")).mobileStorage
+    : (await import("../../browser/storage")).browserStorage;
 
 export const useBrowserStorage = <T>(key: string, fallbackData: T) => {
-  const get = useSWR<T>(
-    key,
-    async () => {
-      return browserStorage.get<T>(key).catch(() => fallbackData);
-    },
-    { suspense: true },
-  );
+  const get = useQuery({
+    queryKey: [key],
+    queryFn: () => storage.get<T>(key).catch(() => fallbackData),
+  });
 
   const set = async <T>(value: T) => {
-    await browserStorage.set<T>(key, value);
-    get.mutate();
+    await storage.set<T>(key, value);
+    get.refetch();
   };
 
   const remove = async () => {
-    await browserStorage.remove(key);
+    await storage.remove(key);
   };
 
   return {
