@@ -2,7 +2,8 @@ import type { AnyD1Database } from "drizzle-orm/d1";
 import { drizzle } from "drizzle-orm/d1";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
-import { insertUserSchema, users } from "shared/schemas/users";
+import { insertUserSchema, selectUserSchema, users } from "../../db/schemas";
+import { zValidator } from "@hono/zod-validator";
 
 type Bindings = {
   DB: AnyD1Database;
@@ -34,16 +35,16 @@ export const route = app
   .get("healthz", (c) => {
     return c.text("OK");
   })
-  .get("/users", async (c) => {
+  .get("/users", zValidator("param", selectUserSchema), async (c) => {
+    // const _param = c.req.valid("param");
     const db = drizzle(c.env.DB);
     const result = await db.select().from(users).all();
     return c.json(result);
   })
-  .post("/users", async (c) => {
-    const body = await c.req.json();
-    const params = insertUserSchema.parse(body);
+  .post("/users", zValidator("json", insertUserSchema), async (c) => {
+    const body = c.req.valid("json");
     const db = drizzle(c.env.DB);
-    const result = await db.insert(users).values(params);
+    const result = await db.insert(users).values(body);
     return c.json(result);
   });
 

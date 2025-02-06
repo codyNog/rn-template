@@ -61,22 +61,17 @@ module.exports = (plop) => {
         type: "add",
         path: "db/schema/{{camelCase name}}/index.ts",
         templateFile:
-          "../../plop-templates/packages/shared/schema/index.ts.hbs",
-      },
-      {
-        type: "add",
-        path: "db/seed/{{camelCase name}}/index.ts",
-        templateFile: "../../plop-templates/packages/shared/schema/seed.ts.hbs",
+          "../../plop-templates/packages/shared/db/schema/index.ts.hbs",
       },
       {
         type: "add",
         path: "db/schema/{{camelCase name}}/types/index.ts",
         templateFile:
-          "../../plop-templates/packages/shared/schema/types/index.ts.hbs",
+          "../../plop-templates/packages/shared/db/schema/types/index.ts.hbs",
       },
       {
         type: "append",
-        path: "db/schema/index.ts",
+        path: "db/schemas/index.ts",
         template:
           "export { {{camelCase name}}, {{camelCase name}}Relations } from './{{camelCase name}}';",
       },

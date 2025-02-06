@@ -19,7 +19,7 @@ compatibility_date = "2024-12-02"
 binding = "DB"
 database_name = "d1-test"
 database_id = "dfcc5a3e-0c3a-4f53-92c8-b0cecd321603"
-migrations_dir = "drizzle"
+migrations_dir = "../shared/db/migrations"
 
 # [ai]
 # binding = "AI"
