@@ -8,7 +8,8 @@
       ".vscode/**",
       ".expo/**",
       "dist/**",
-      ".wrangler/**"
+      ".wrangler/**",
+      "packages/shared/db/migrations/**"
     ]
   },
   "linter": {

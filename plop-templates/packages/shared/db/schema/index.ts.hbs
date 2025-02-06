@@ -1,0 +1,15 @@
+export const {{name}} = sqliteTable("{{snakeCase name}}", {
+  id: text("id")
+    .primaryKey()
+    .$defaultFn(() => v7()),
+  createdAt: text("created_at").notNull().default(sql`(current_timestamp)`),
+  updatedAt: text("updated_at").notNull().default(sql`(current_timestamp)`),
+});
+
+export const {{name}}Relations = relations({{snakeCase name}}, () => ({}));
+
+export const insert{{pascalCase name}}Schema = createInsertSchema({{name}}, {});
+export type Insert{{pascalCase name}}Schema = z.infer<typeof insert{{pascalCase name}}Schema>;
+
+export const select{{pascalCase name}}Schema = createSelectSchema({{name}}, {});
+export type Select{{pascalCase name}}Schema = z.infer<typeof select{{pascalCase name}}Schema>;

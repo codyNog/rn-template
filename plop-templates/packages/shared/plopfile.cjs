@@ -58,22 +58,10 @@ module.exports = (plop) => {
     ],
     actions: [
       {
-        type: "add",
-        path: "db/schema/{{camelCase name}}/index.ts",
-        templateFile:
-          "../../plop-templates/packages/shared/db/schema/index.ts.hbs",
-      },
-      {
-        type: "add",
-        path: "db/schema/{{camelCase name}}/types/index.ts",
-        templateFile:
-          "../../plop-templates/packages/shared/db/schema/types/index.ts.hbs",
-      },
-      {
         type: "append",
         path: "db/schemas/index.ts",
-        template:
-          "export { {{camelCase name}}, {{camelCase name}}Relations } from './{{camelCase name}}';",
+        templateFile:
+          "../../plop-templates/packages/shared/db/schema/index.ts.hbs",
       },
     ],
   });

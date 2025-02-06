@@ -14,8 +14,8 @@ export const users = sqliteTable("users", {
 
 export const usersRelations = relations(users, () => ({}));
 
-export const insertUserSchema = createInsertSchema(users);
+export const insertUserSchema = createInsertSchema(users, {});
 export type InsertUserSchema = z.infer<typeof insertUserSchema>;
 
-export const selectUserSchema = createSelectSchema(users);
+export const selectUserSchema = createSelectSchema(users, {});
 export type SelectUserSchema = z.infer<typeof selectUserSchema>;

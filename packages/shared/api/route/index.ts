@@ -1,9 +1,9 @@
+import { zValidator } from "@hono/zod-validator";
 import type { AnyD1Database } from "drizzle-orm/d1";
 import { drizzle } from "drizzle-orm/d1";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { insertUserSchema, selectUserSchema, users } from "../../db/schemas";
-import { zValidator } from "@hono/zod-validator";
 
 type Bindings = {
   DB: AnyD1Database;
