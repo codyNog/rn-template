@@ -1,0 +1,9 @@
+[install]
+registry = "https://npm.pkg.github.com"
+scopes = { codynog = { registry = "https://npm.pkg.github.com" } }
+
+# GitHub authentication token
+authToken = "${GITHUB_TOKEN}"
+
+[env]
+GITHUB_TOKEN = true
