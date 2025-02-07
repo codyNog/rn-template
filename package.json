@@ -3,6 +3,7 @@
   "module": "index.ts",
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
+    "@codynog/cody-rn-ui": "^2025.2.6",
     "@expo/webpack-config": "^19.0.1",
     "@happy-dom/global-registrator": "^16.6.0",
     "@markuplint/jsx-parser": "^4.7.14",
@@ -30,7 +31,7 @@
   },
   "scripts": {
     "preinstall": "npx only-allow bun",
-    "postinstall": "bun gen",
+    "postinstall": "bun gen && bun cody-rn-ui --output packages/ui",
     "app": "bun --filter app",
     "shared": "bun --filter shared",
     "server": "bun --filter server",

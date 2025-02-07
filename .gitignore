@@ -186,3 +186,6 @@ dist
 # packages/gen
 
 packages/gen
+packages/ui
+
+.version.json
