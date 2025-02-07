@@ -1,5 +1,6 @@
 "use client";
-import { Text, View } from "ui";
+import { Text } from "ui/Text";
+import { View } from "ui/View";
 import { useUserList } from "./hooks";
 import _styles from "./index.module.css";
 import type { Props } from "./types";

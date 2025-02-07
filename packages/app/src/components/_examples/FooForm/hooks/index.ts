@@ -14,7 +14,7 @@ const DEFAULT_VALUES: FooFormValues = {
   visible: false,
 };
 
-export const useFooForm = ({ action, defaultValues }: Props) => {
+export const useFooForm = ({ action, defaultValues, ref }: Props) => {
   const {
     handleSubmit,
     formState: { errors },
@@ -32,5 +32,5 @@ export const useFooForm = ({ action, defaultValues }: Props) => {
     })();
   }, [handleSubmit, action, t]);
 
-  return { onSubmit, errors, control, t };
+  return { onSubmit, errors, control, t, ref };
 };

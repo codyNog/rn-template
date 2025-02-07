@@ -1,14 +1,18 @@
 import { useUserForm } from "@/components/UserForm/hooks";
 import type { Props } from "@/components/UserForm/types";
-import { forwardRef } from "react";
 import { Controller } from "react-hook-form";
-import { Button, Form, Input, Text, VisuallyHidden, YStack } from "ui";
+import { Button } from "ui/Button";
+import { Form } from "ui/Form";
+import { Input } from "ui/Input";
+import { Text } from "ui/Text";
+import { YStack } from "ui/Stack";
+import { VisuallyHidden } from "ui/VisuallyHidden";
 
 /**
  * Form Component for create or update User.
  * @param {Props} props {@link Props}
  */
-export const UserForm = forwardRef<HTMLFormElement, Props>((props, _ref) => {
+export const UserForm = (props: Props) => {
   const { onSubmit, errors, control, t } = useUserForm(props);
   return (
     <Form>
@@ -63,4 +67,4 @@ export const UserForm = forwardRef<HTMLFormElement, Props>((props, _ref) => {
       </YStack>
     </Form>
   );
-});
+};

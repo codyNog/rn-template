@@ -9,7 +9,7 @@ import { useFonts } from "expo-font";
 import { SplashScreen } from "expo-router";
 import { type ReactNode, useEffect } from "react";
 import { useColorScheme } from "react-native";
-import { UIProvider } from "ui";
+import { UIProvider } from "ui/Provider";
 
 type ProvidersProps = {
   children: ReactNode;

@@ -1,6 +1,5 @@
 import { use{{pascalCase name}}Form } from "@/components/{{pascalCase name}}Form/hooks";
 import type { Props } from "@/components/{{pascalCase name}}Form/types";
-import { forwardRef } from "react";
 import { YStack, Text, Button, Input, VisuallyHidden, Form } from "ui"
 import { Controller } from "react-hook-form";
 
@@ -8,7 +7,7 @@ import { Controller } from "react-hook-form";
  * Form Component for create or update {{pascalCase name}}.
  * @param {Props} props {@link Props}
  */
-export const {{pascalCase name}}Form = forwardRef<HTMLFormElement, Props>((props, _ref) => {
+export const {{pascalCase name}}Form = (props: Props) => {
   const {onSubmit, errors, control, t} = use{{pascalCase name}}Form(props);
   return (
   <Form> 
@@ -31,4 +30,4 @@ export const {{pascalCase name}}Form = forwardRef<HTMLFormElement, Props>((props
     </Form.Trigger>
   </YStack>
   </Form>)
-});
+}

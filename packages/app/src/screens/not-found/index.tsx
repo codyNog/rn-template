@@ -1,5 +1,5 @@
 import { Stack } from "expo-router";
-import { Text } from "ui";
+import { Text } from "ui/Text";
 
 export default function NotFoundScreen() {
   return (

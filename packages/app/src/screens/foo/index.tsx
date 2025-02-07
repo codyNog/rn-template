@@ -1,5 +1,5 @@
 import { Stack } from "expo-router";
-import { Text } from "ui";
+import { Text } from "ui/Text";
 import { useFooScreen } from "./hooks";
 
 const Screen = () => {

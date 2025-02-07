@@ -1,22 +1,19 @@
 import { useFooForm } from "@/components/_examples/FooForm/hooks";
 import type { Props } from "@/components/_examples/FooForm/types";
-import { forwardRef } from "react";
 import { Controller } from "react-hook-form";
-import {
-  Button,
-  Form,
-  Input,
-  Switch,
-  TextArea,
-  VisuallyHidden,
-  YStack,
-} from "ui";
+import { Button } from "ui/Button";
+import { Form } from "ui/Form";
+import { Input } from "ui/Input";
+import { YStack } from "ui/Stack";
+import { TextArea } from "ui/TextArea";
+import { VisuallyHidden } from "ui/VisuallyHidden";
+import { Switch } from "ui/Switch";
 
 /**
  * Form Component for create or update Foo.
  * @param {Props} props {@link Props}
  */
-export const FooForm = forwardRef<HTMLFormElement, Props>((props, _ref) => {
+export const FooForm = (props: Props) => {
   const { onSubmit, errors, control, t } = useFooForm(props);
   return (
     <Form onSubmit={onSubmit}>
@@ -72,4 +69,4 @@ export const FooForm = forwardRef<HTMLFormElement, Props>((props, _ref) => {
       </YStack>
     </Form>
   );
-});
+};

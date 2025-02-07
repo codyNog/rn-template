@@ -1,4 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import type { Ref } from "react";
 import z from "zod";
 
 const FooFormValuesSchema = z.object({
@@ -15,4 +16,5 @@ export const FooFormResolver = zodResolver(FooFormValuesSchema);
 export type Props = {
   action: (value: FooFormValues) => Promise<void>;
   defaultValues?: FooFormValues;
+  ref?: Ref<unknown>;
 };
