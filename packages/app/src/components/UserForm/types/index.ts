@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { insertUserSchema } from "shared/schemas/users";
+import { insertUserSchema } from "shared/db/schemas";
 import type z from "zod";
 
 const UserFormValuesSchema = insertUserSchema;

@@ -9,6 +9,7 @@ import { useFonts } from "expo-font";
 import { SplashScreen } from "expo-router";
 import { type ReactNode, useEffect } from "react";
 import { useColorScheme } from "react-native";
+import { I18nProvider } from "shared/libs/i18n";
 import { UIProvider } from "ui/Provider";
 
 type ProvidersProps = {
@@ -19,10 +20,11 @@ const client = new QueryClient();
 
 const useProviders = () => {
   const colorScheme = useColorScheme();
+  // フォントの読み込みを簡略化
   const [loaded, error] = useFonts({
     SpaceMono: require("../../assets/fonts/SpaceMono-Regular.ttf"),
-    Inter: require("@tamagui/font-inter/otf/Inter-Medium.otf"), // フォント追加
-    InterBold: require("@tamagui/font-inter/otf/Inter-Bold.otf"), // フォント追加
+    // Inter: require("@tamagui/font-inter/otf/Inter-Medium.otf"), // 一時的にコメントアウト
+    // InterBold: require("@tamagui/font-inter/otf/Inter-Bold.otf"), // 一時的にコメントアウト
     ...FontAwesome.font,
   });
 
@@ -49,7 +51,9 @@ export const Providers = ({ children }: ProvidersProps) => {
   return (
     <ThemeProvider value={theme}>
       <UIProvider>
-        <QueryClientProvider client={client}>{children}</QueryClientProvider>
+        <I18nProvider>
+          <QueryClientProvider client={client}>{children}</QueryClientProvider>
+        </I18nProvider>
       </UIProvider>
     </ThemeProvider>
   );

@@ -1,66 +1,42 @@
 import { useUserForm } from "@/components/UserForm/hooks";
 import type { Props } from "@/components/UserForm/types";
+import type { I18nKey } from "gen/i18n/types";
 import { Controller } from "react-hook-form";
 import { Button } from "ui/Button";
 import { Form } from "ui/Form";
-import { Input } from "ui/Input";
-import { Text } from "ui/Text";
+import { Grid } from "ui/Grid";
 import { YStack } from "ui/Stack";
+import { TextField } from "ui/TextField";
 import { VisuallyHidden } from "ui/VisuallyHidden";
 
 /**
- * Form Component for create or update User.
+ * Form Component for create or update Foo.
  * @param {Props} props {@link Props}
  */
 export const UserForm = (props: Props) => {
   const { onSubmit, errors, control, t } = useUserForm(props);
   return (
     <Form>
-      <YStack>
-        <Text>UserForm</Text>
-        {errors && <Text>errors</Text>}
-        <Controller
-          control={control}
-          name="id"
-          render={({ field }) => (
-            <VisuallyHidden>
-              <Input
-                {...field}
-                error={errors.id?.message && t(errors.id.message)}
-              />
-            </VisuallyHidden>
-          )}
-        />
-        <Controller
-          control={control}
-          name="name"
-          render={({ field }) => (
-            <Input
-              {...field}
-              error={errors.name?.message && t(errors.name.message)}
+      <YStack gap={"$4"}>
+        <Grid.Row>
+          <Grid.Column span={4}>
+            <Controller
+              control={control}
+              name="id"
+              render={({ field }) => (
+                <VisuallyHidden>
+                  <TextField
+                    {...field}
+                    label={"id"}
+                    error={
+                      errors.id?.message && t(errors.id.message as I18nKey)
+                    }
+                  />
+                </VisuallyHidden>
+              )}
             />
-          )}
-        />
-        <Controller
-          control={control}
-          name="email"
-          render={({ field }) => (
-            <Input
-              {...field}
-              error={errors.email?.message && t(errors.email.message)}
-            />
-          )}
-        />
-        <Controller
-          control={control}
-          name="password"
-          render={({ field }) => (
-            <Input
-              {...field}
-              error={errors.password?.message && t(errors.password.message)}
-            />
-          )}
-        />
+          </Grid.Column>
+        </Grid.Row>
         <Form.Trigger asChild>
           <Button onPress={onSubmit}>{t("submit")}</Button>
         </Form.Trigger>

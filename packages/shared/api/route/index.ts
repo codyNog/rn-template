@@ -1,17 +1,8 @@
-import { zValidator } from "@hono/zod-validator";
-import type { AnyD1Database } from "drizzle-orm/d1";
-import { drizzle } from "drizzle-orm/d1";
-import { Hono } from "hono";
 import { cors } from "hono/cors";
-import { insertUserSchema, selectUserSchema, users } from "../../db/schemas";
+import { server } from "../server";
+import { usersRouter } from "./users";
 
-type Bindings = {
-  DB: AnyD1Database;
-};
-
-const app = new Hono<{ Bindings: Bindings }>();
-
-export const route = app
+export const route = server
   .use(
     "/*",
     cors({
@@ -32,20 +23,9 @@ export const route = app
   .get("/", (c) => {
     return c.text("Hello Hono!");
   })
-  .get("healthz", (c) => {
+  .get("/healthz", (c) => {
     return c.text("OK");
   })
-  .get("/users", zValidator("param", selectUserSchema), async (c) => {
-    // const _param = c.req.valid("param");
-    const db = drizzle(c.env.DB);
-    const result = await db.select().from(users).all();
-    return c.json(result);
-  })
-  .post("/users", zValidator("json", insertUserSchema), async (c) => {
-    const body = c.req.valid("json");
-    const db = drizzle(c.env.DB);
-    const result = await db.insert(users).values(body);
-    return c.json(result);
-  });
+  .route("/", usersRouter);
 
 export type AppType = typeof route;

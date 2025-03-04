@@ -1,7 +1,10 @@
+# DON'T EDIT NEXT LINE
 key,ja-JP,en-US
-foo,ふー,Foo
-bar,ばー,Bar
-foo.bar,ふーばー,FooBar
+
+# common
+submit,送信,Submit
+delete,削除,Delete
+id,ID,ID
 
 # form
 form.submit,送信,Submit

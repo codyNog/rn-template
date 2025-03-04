@@ -7,7 +7,7 @@ export const useUserList = ({}: Props) => {
   const { data: users } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
-      return (await rpcClient.users.$get()).json();
+      return (await rpcClient.users.$get({ query: {} })).json();
     },
   });
 

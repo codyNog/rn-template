@@ -24,6 +24,6 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noPropertyAccessFromIndexSignature": false,
-    "types": ["node", "bun-types"]
+    "types": ["node"]
   }
 }

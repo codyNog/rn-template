@@ -12,8 +12,9 @@ export const UserList = (props: Props) => {
       {users?.map((user) => {
         return (
           <View key={user.id}>
-            <Text>{user.name}</Text>
-            <Text>{user.email}</Text>
+            <Text>ID: {user.id}</Text>
+            <Text>Created: {user.createdAt}</Text>
+            <Text>Updated: {user.updatedAt}</Text>
           </View>
         );
       })}

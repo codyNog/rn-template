@@ -1,19 +1,24 @@
-import { FooForm } from "@/components/_examples/FooForm";
-import type { FooFormValues } from "@/components/_examples/FooForm/types";
-import { useI18n } from "@/hooks/i18n";
+import { useI18n } from "shared/libs/i18n";
 import { Text } from "ui/Text";
-import { View } from "ui/View";
+import { AppLayout } from "ui/AppLayout";
+import { Home } from "ui/icons";
 
 export default function HomeScreen() {
   const t = useI18n();
-  const action = async (values: FooFormValues) => {
-    console.log(values);
-  };
 
   return (
-    <View>
-      <Text>{t("hello", { name: "foo" })}</Text>
-      <FooForm action={action} />
-    </View>
+    <AppLayout
+      navigationBar={{
+        items: [
+          {
+            label: "home",
+            icon: <Home />,
+            value: "home",
+          },
+        ],
+      }}
+    >
+      <Text>{t("submit")}</Text>
+    </AppLayout>
   );
 }

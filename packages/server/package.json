@@ -5,11 +5,12 @@
     "deploy": "wrangler deploy --minify",
     "generate": "drizzle-kit generate",
     "local:migration": "wrangler d1 migrations apply d1-test --local",
-    "remote:migration": "wrangler d1 migrations apply d1-test --remote"
+    "remote:migration": "wrangler d1 migrations apply d1-test --remote",
+    "build-check": "tsc --noEmit"
   },
   "dependencies": {
     "hono": "^4.6.12",
-    "shared": "workspace:*"
+    "shared": "*"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20241112.0",

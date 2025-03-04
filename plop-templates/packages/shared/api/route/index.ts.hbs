@@ -1,0 +1,7 @@
+import { server } from "../../server";
+
+export const {{camelCase name}}Router = server
+  .basePath("/{{snakeCase name}}")
+  .get("/", async (c) => {
+    return c.text("hello world");
+  });

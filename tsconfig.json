@@ -23,6 +23,6 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noPropertyAccessFromIndexSignature": false,
-    "types": ["jest", "bun-types"]
+    "types": ["jest"]
   }
 }

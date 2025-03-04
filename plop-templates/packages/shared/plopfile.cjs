@@ -65,4 +65,22 @@ module.exports = (plop) => {
       },
     ],
   });
+  plop.setGenerator("route", {
+    description: "route",
+    prompts: [
+      {
+        type: "input",
+        name: "name",
+        message: "route name please",
+      },
+    ],
+    actions: [
+      {
+        type: "add",
+        path: "api/route/{{snakeCase name}}/index.ts",
+        templateFile:
+          "../../plop-templates/packages/shared/api/route/index.ts.hbs",
+      },
+    ],
+  });
 };

@@ -33,11 +33,12 @@
           "backgroundColor": "#ffffff"
         }
       ],
-      "expo-font"
+      "expo-font",
+      "expo-localization"
     ],
     "experiments": {
       "typedRoutes": true,
-      "reactServerFunctions": true
+      "reactServerFunctions": false
     }
   }
 }
