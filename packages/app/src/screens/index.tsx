@@ -1,24 +1,20 @@
+import { Link } from "expo-router";
 import { useI18n } from "shared/libs/i18n";
 import { Text } from "ui/Text";
-import { AppLayout } from "ui/AppLayout";
-import { Home } from "ui/icons";
+import { Anchor } from "ui/Anchor";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function HomeScreen() {
   const t = useI18n();
 
   return (
-    <AppLayout
-      navigationBar={{
-        items: [
-          {
-            label: "home",
-            icon: <Home />,
-            value: "home",
-          },
-        ],
-      }}
-    >
+    <SafeAreaView>
       <Text>{t("submit")}</Text>
-    </AppLayout>
+      <Anchor>
+        <Link href="/chat">
+          <Text>Chat</Text>
+        </Link>
+      </Anchor>
+    </SafeAreaView>
   );
 }
