@@ -36,13 +36,15 @@ const useProviders = () => {
   return { loaded, theme: colorScheme || undefined };
 };
 
+const KEY_COLOR = "#006493";
+
 export const Providers = ({ children }: ProvidersProps) => {
   const { loaded, theme } = useProviders();
 
   if (!loaded) return null;
 
   return (
-    <UIProvider theme={theme}>
+    <UIProvider theme={theme} keyColor={KEY_COLOR}>
       <I18nProvider>
         <QueryClientProvider client={client}>{children}</QueryClientProvider>
       </I18nProvider>

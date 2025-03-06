@@ -1,8 +1,8 @@
 import { Link } from "expo-router";
+import { SafeAreaView } from "ui/SafeAreaView";
 import { useI18n } from "shared/libs/i18n";
-import { Text } from "ui/Text";
 import { Anchor } from "ui/Anchor";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { Text } from "ui/Text";
 
 export default function HomeScreen() {
   const t = useI18n();
@@ -11,7 +11,7 @@ export default function HomeScreen() {
     <SafeAreaView>
       <Text>{t("submit")}</Text>
       <Anchor>
-        <Link href="/chat">
+        <Link href="/messages">
           <Text>Chat</Text>
         </Link>
       </Anchor>

@@ -1,5 +1,6 @@
 import { Providers } from "@/providers";
-import { SplashScreen, Stack } from "expo-router";
+import { Slot, SplashScreen } from "expo-router";
+import { AppLayout } from "ui/AppLayout";
 export { ErrorBoundary } from "expo-router";
 
 export const unstable_settings = {
@@ -11,9 +12,9 @@ SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
   return (
     <Providers>
-      <Stack screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="modal" options={{ presentation: "modal" }} />
-      </Stack>
+      <AppLayout>
+        <Slot />
+      </AppLayout>
     </Providers>
   );
 }

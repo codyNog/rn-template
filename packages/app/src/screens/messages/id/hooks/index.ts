@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useCallback, useState } from "react";
 
 type Message = {
   id: string;
@@ -6,7 +6,7 @@ type Message = {
   type: "sent" | "received";
 };
 
-export const useChatScreen = () => {
+export const useMessagesIdScreen = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "1",

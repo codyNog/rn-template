@@ -1,8 +1,7 @@
-import { AppLayout } from "ui/AppLayout";
-import { Slot, useRouter, usePathname } from "expo-router";
+import { type Href, Slot, usePathname, useRouter } from "expo-router";
+import { useCallback } from "react";
 import { NavigationBar } from "ui/NavigationBar";
-import { Home, Menu, MessageCircle } from "ui/icons";
-import { TopAppBar } from "ui/TopAppBar";
+import { MessageCircle, Settings } from "ui/icons";
 
 export default function TabLayout() {
   const router = useRouter();
@@ -14,41 +13,34 @@ export default function TabLayout() {
     return "home"; // デフォルトはホーム
   };
 
+  const onValueChange = useCallback(
+    (value: string) => {
+      router.push(value as Href);
+    },
+    [router],
+  );
+
   return (
-    <AppLayout
-      topAppBar={<TopAppBar headline={"ホーム"}>ホーム</TopAppBar>}
-      navigationBar={
-        <NavigationBar
-          items={[
-            {
-              icon: <Home size={24} color="$onSurfaceVariant" />,
-              activeIcon: <Home size={24} color="$primary" />,
-              label: "ホーム",
-              value: "home",
-            },
-            {
-              icon: <MessageCircle size={24} color="$onSurfaceVariant" />,
-              activeIcon: <MessageCircle size={24} color="$primary" />,
-              label: "チャット",
-              value: "chat",
-            },
-          ]}
-          defaultValue={getActiveTabValue()}
-          onValueChange={(value) => {
-            // 値に基づいて適切なルートに移動
-            switch (value) {
-              case "chat":
-                router.push("/chat");
-                break;
-              default:
-                router.push("/");
-                break;
-            }
-          }}
-        />
-      }
-    >
+    <>
       <Slot />
-    </AppLayout>
+      <NavigationBar
+        items={[
+          {
+            value: "/messages",
+            icon: <MessageCircle size={24} color="$onSurfaceVariant" />,
+            activeIcon: <MessageCircle size={24} color="$primary" />,
+            label: "チャット",
+          },
+          {
+            value: "/settings",
+            icon: <Settings size={24} color="$onSurfaceVariant" />,
+            activeIcon: <Settings size={24} color="$primary" />,
+            label: "設定",
+          },
+        ]}
+        onValueChange={onValueChange}
+        defaultValue={getActiveTabValue()}
+      />
+    </>
   );
 }
