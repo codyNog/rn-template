@@ -16,6 +16,7 @@ export default function TabLayout() {
 
   return (
     <AppLayout
+      topAppBar={<TopAppBar headline={"ホーム"}>ホーム</TopAppBar>}
       navigationBar={
         <NavigationBar
           items={[

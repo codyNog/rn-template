@@ -1,9 +1,4 @@
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider,
-} from "@react-navigation/native";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useFonts } from "expo-font";
 import { SplashScreen } from "expo-router";
@@ -23,8 +18,8 @@ const useProviders = () => {
   // フォントの読み込みを簡略化
   const [loaded, error] = useFonts({
     SpaceMono: require("../../assets/fonts/SpaceMono-Regular.ttf"),
-    // Inter: require("@tamagui/font-inter/otf/Inter-Medium.otf"), // 一時的にコメントアウト
-    // InterBold: require("@tamagui/font-inter/otf/Inter-Bold.otf"), // 一時的にコメントアウト
+    Inter: require("@tamagui/font-inter/otf/Inter-Medium.otf"), // 一時的にコメントアウト
+    InterBold: require("@tamagui/font-inter/otf/Inter-Bold.otf"), // 一時的にコメントアウト
     ...FontAwesome.font,
   });
 
@@ -38,9 +33,7 @@ const useProviders = () => {
     }
   }, [loaded]);
 
-  const theme = colorScheme === "dark" ? DarkTheme : DefaultTheme;
-
-  return { loaded, theme };
+  return { loaded, theme: colorScheme || undefined };
 };
 
 export const Providers = ({ children }: ProvidersProps) => {
@@ -49,12 +42,10 @@ export const Providers = ({ children }: ProvidersProps) => {
   if (!loaded) return null;
 
   return (
-    <ThemeProvider value={theme}>
-      <UIProvider>
-        <I18nProvider>
-          <QueryClientProvider client={client}>{children}</QueryClientProvider>
-        </I18nProvider>
-      </UIProvider>
-    </ThemeProvider>
+    <UIProvider theme={theme}>
+      <I18nProvider>
+        <QueryClientProvider client={client}>{children}</QueryClientProvider>
+      </I18nProvider>
+    </UIProvider>
   );
 };
