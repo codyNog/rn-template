@@ -3,6 +3,7 @@
   "module": "index.ts",
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
+    "@codynog/ai-rules": "^2025.3.1",
     "@expo/webpack-config": "^19.0.1",
     "@happy-dom/global-registrator": "^17.0.0",
     "@markuplint/jsx-parser": "^4.7.15",
@@ -30,7 +31,7 @@
   },
   "scripts": {
     "preinstall": "npx only-allow npm",
-    "postinstall": "npm run gen && npm run ui:extract",
+    "postinstall": "npm run gen && npm run ui:extract && npx @codynog/ai-rules",
     "ui:extract": "npx @codynog/cody-rn-ui --output packages/ui",
     "app": "npm run --workspace=app",
     "shared": "npm run --workspace=shared",
@@ -55,7 +56,9 @@
     "update": "npm-check-updates -u && npm run --workspaces update"
   },
   "type": "module",
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "dependencies": {
     "@codynog/cody-rn-ui": "^2025.3.12",
     "expo-localization": "~16.0.1",

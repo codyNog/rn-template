@@ -189,3 +189,9 @@ packages/gen
 packages/ui
 
 .version.json
+
+# ai-rules
+ai-docs/**
+.cursorrules
+.clinerules
+ai-rules-version.json
