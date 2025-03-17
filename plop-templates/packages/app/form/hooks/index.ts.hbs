@@ -8,8 +8,8 @@ export const use{{pascalCase name}}Form = ({action, defaultValues}: Props) => {
     const { handleSubmit, formState: {errors}, control} = useForm<{{pascalCase name}}FormValues>({resolver: {{name}}FormResolver, defaultValues})
     const t = useI18n();
 
-    const onSubmit = useCallback(() => {
-        handleSubmit(async (values) => {
+    const onSubmit = useCallback(async() => {
+        await handleSubmit(async (values) => {
             await action(values)
             console.log(t)
         })();

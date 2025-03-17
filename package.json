@@ -43,7 +43,9 @@
     "lint:spell": "cspell . --no-progress",
     "storybook": "echo Please start in each environment",
     "format": "biome check --write .",
-    "dev": "npm run --workspaces dev",
+    "dev": "npx run-p \"app:dev\" \"server:dev\"",
+    "app:dev": "npm run --workspace=app dev",
+    "server:dev": "npm run --workspace=server dev",
     "test": "vitest run",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
@@ -53,7 +55,9 @@
     "gen:schema": "npm run shared db:generate && npm run server local:migration",
     "knip": "knip",
     "build-check": "npm run --if-present --workspaces build-check",
-    "update": "npm-check-updates -u && npm run --workspaces update"
+    "update": "npm-check-updates -u && npm run --workspaces update",
+    "watch": "npx run-p watch:*",
+    "watch:i18n": "node i18n/watcher.js"
   },
   "type": "module",
   "workspaces": [
