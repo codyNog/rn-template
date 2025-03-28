@@ -1,5 +1,6 @@
 import { GlobalRegistrator } from "@happy-dom/global-registrator";
 import { vi } from "vitest";
+
 // Install happy-dom globals
 GlobalRegistrator.register();
 

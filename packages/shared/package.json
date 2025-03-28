@@ -31,7 +31,7 @@
   },
   "scripts": {
     "build-check": "tsc --noEmit",
-    "test": "NODE_ENV=test npm run test:setup && npm run test:unit && npm run test:cleanup",
+    "test": "vitest run",
     "test:unit": "node --test",
     "test:setup": "docker compose up test_db -d && npm run wait:db && npm run db:migrate && npm run db:seed",
     "test:cleanup": "docker compose stop test_db",

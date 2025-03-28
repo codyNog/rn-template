@@ -23,9 +23,6 @@ export const route = server
   .get("/", (c) => {
     return c.text("Hello Hono!");
   })
-  .get("/healthz", (c) => {
-    return c.text("OK");
-  })
   .route("/", usersRouter);
 
 export type AppType = typeof route;

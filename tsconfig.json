@@ -23,6 +23,6 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noPropertyAccessFromIndexSignature": false,
-    "types": ["jest"]
+    "types": ["jest", "vitest/globals", "node"]
   }
 }
