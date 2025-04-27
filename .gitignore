@@ -192,6 +192,9 @@ packages/ui
 
 # ai-rules
 ai-docs/**
-.cursorrules
+.cursor/rules
 .clinerules
-ai-rules-version.json
+.ai-rules-version.json
+.roo/rules
+.github/copilot-instructions.md
+.roomodes
