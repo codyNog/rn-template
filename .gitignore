@@ -196,5 +196,6 @@ ai-docs/**
 .clinerules
 .ai-rules-version.json
 .roo/rules
+.roo/rules-*
 .github/copilot-instructions.md
 .roomodes
