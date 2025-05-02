@@ -1,4 +1,4 @@
-import { YStack } from "ui";
+import { YStack } from "ui/Stack";
 import { useSettingsNotificationsScreen } from "./hooks";
 import { SafeAreaView } from "ui/SafeAreaView";
 import { Grid } from "ui/Grid";

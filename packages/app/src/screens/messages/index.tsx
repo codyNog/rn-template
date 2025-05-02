@@ -1,5 +1,4 @@
 import { Link } from "expo-router";
-import { View } from "ui";
 import { Text } from "ui/Text";
 import { useMessagesScreen } from "./hooks";
 import { SafeAreaView } from "ui/SafeAreaView";

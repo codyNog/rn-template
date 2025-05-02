@@ -18,8 +18,8 @@ const useProviders = () => {
   // フォントの読み込みを簡略化
   const [loaded, error] = useFonts({
     SpaceMono: require("../../assets/fonts/SpaceMono-Regular.ttf"),
-    Inter: require("@tamagui/font-inter/otf/Inter-Medium.otf"), // 一時的にコメントアウト
-    InterBold: require("@tamagui/font-inter/otf/Inter-Bold.otf"), // 一時的にコメントアウト
+    Inter: require("@tamagui/font-inter/otf/Inter-Medium.otf"),
+    InterBold: require("@tamagui/font-inter/otf/Inter-Bold.otf"),
     ...FontAwesome.font,
   });
 
