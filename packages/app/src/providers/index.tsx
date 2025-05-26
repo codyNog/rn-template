@@ -8,6 +8,7 @@ import { I18nProvider } from "shared/libs/i18n";
 
 type ProvidersProps = {
   children: ReactNode;
+  locale?: string;
 };
 
 const client = new QueryClient();
@@ -25,14 +26,14 @@ const useProviders = () => {
 
 const KEY_COLOR = "#006493";
 
-export const Providers = ({ children }: ProvidersProps) => {
+export const Providers = ({ children, locale }: ProvidersProps) => {
   const { loaded } = useProviders();
 
   // フォントが読み込まれるまで何も表示しないか、ローディング表示を出す
   // ここでは一旦、読み込み完了後に子要素を表示するようにするね
   return (
     <UIProvider keyColor={KEY_COLOR}>
-      <I18nProvider>
+      <I18nProvider locale={locale}>
         <QueryClientProvider client={client}>
           {loaded ? children : null}
         </QueryClientProvider>

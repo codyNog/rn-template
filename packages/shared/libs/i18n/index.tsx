@@ -4,6 +4,7 @@ import jaJP from "gen/i18n/ja-JP";
 import type { DynamicKey, I18nKey } from "gen/i18n/types";
 import i18next from "i18next";
 import type { FC, ReactNode } from "react";
+import { useEffect } from "react";
 import { initReactI18next, useTranslation } from "react-i18next";
 
 // i18nextの初期化
@@ -38,8 +39,17 @@ export const useI18n = () => {
 
 /**
  * i18nプロバイダーコンポーネント
- * 必要に応じてプロバイダーの設定を行う場合に使用します
+ * 渡されたlocaleでi18nextの言語を設定します
  */
-export const I18nProvider = ({ children }: { children: ReactNode }) => {
-  return children;
+export const I18nProvider = ({
+  children,
+  locale,
+}: { children: ReactNode; locale?: string }) => {
+  useEffect(() => {
+    if (locale && i18next.language !== locale) {
+      i18next.changeLanguage(locale);
+    }
+  }, [locale]);
+
+  return <>{children}</>;
 };

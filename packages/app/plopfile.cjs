@@ -139,8 +139,8 @@ module.exports = (plop) => {
       },
       {
         type: "add",
-        path: "app/{{name}}/layout.ts",
-        templateFile: "../../plop-templates/packages/app/layout/layout.ts.hbs",
+        path: "app/{{name}}/_layout.ts",
+        templateFile: "../../plop-templates/packages/app/layout/_layout.ts.hbs",
       },
     ],
   });
