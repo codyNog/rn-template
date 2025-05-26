@@ -1,15 +1,15 @@
-import type { Props, {{pascalCase name}}FormValues } from "@/components/{{pascalCase name}}Form/types";
-import { {{camelCase name}}FormResolver } from "@/components/{{pascalCase name}}Form/types";
+import type { FooFormValues, Props } from "@/components/FooForm/types";
+import { fooFormResolver } from "@/components/FooForm/types";
 import { useCallback } from "react";
 import { useForm } from "react-hook-form";
 import { useI18n } from "shared/libs/i18n";
 
-export const use{{pascalCase name}}Form = ({ action, defaultValues }: Props) => {
+export const useFooForm = ({ action, defaultValues }: Props) => {
   const {
     handleSubmit,
     formState: { errors },
     control,
-  } = useForm<{{pascalCase name}}FormValues>({ resolver: {{camelCase name}}FormResolver, defaultValues });
+  } = useForm<FooFormValues>({ resolver: fooFormResolver, defaultValues });
   const t = useI18n();
 
   const onSubmit = useCallback(() => {

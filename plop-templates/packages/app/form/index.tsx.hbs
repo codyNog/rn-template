@@ -1,8 +1,9 @@
 import { use{{pascalCase name}}Form } from "./hooks";
 import type { Props } from "./types";
-import { Grid, Stack, Button, TextField, VisuallyHidden, Form } from "@codynog/rn-ui";
+import { Button, Grid, GridItem, TextField, VisuallyHidden } from "@codynog/rn-ui";
+import type { I18nKey } from "gen/i18n/types";
 import { Controller } from "react-hook-form";
-import { I18nKey } from "shared/libs/i18n";
+
 /**
  * Form Component for create or update {{pascalCase name}}.
  * @param {Props} props {@link Props}
@@ -10,16 +11,27 @@ import { I18nKey } from "shared/libs/i18n";
 export const {{pascalCase name}}Form = (props: Props) => {
   const { onSubmit, errors, control, t } = use{{pascalCase name}}Form(props);
   return (
-    <Form onSubmit={onSubmit}>
-      <Stack spacing={4} direction="column">
-        <Grid>
-          <TextField
-            label="id"
-            errorMessage={errors.id?.message}
+    <Grid>
+      <VisuallyHidden>
+        <GridItem span={12}>
+          <Controller
+            control={control}
+            name="id"
+            render={({ field }) => (
+                <TextField
+                  {...field}
+                  label={"id"}
+                  errorMessage={
+                    errors.id?.message && t(errors.id.message as I18nKey)
+                  }
+                />
+            )}
           />
-        </Grid>
-        <Button type="submit">Submit</Button>
-      </Stack>
-    </Form>
+        </GridItem>
+      </VisuallyHidden>
+      <GridItem span={4}>
+        <Button onPress={onSubmit}>{t("submit" as I18nKey)}</Button>
+      </GridItem>
+    </Grid>
   );
 };
