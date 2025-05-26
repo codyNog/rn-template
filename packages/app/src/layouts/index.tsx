@@ -1,20 +1,18 @@
-import { Providers } from "@/providers";
-import { Slot, SplashScreen } from "expo-router";
-import { AppLayout } from "ui/AppLayout";
+import { AppLayout } from "@codynog/rn-ui";
+import { UIProvider } from "@codynog/rn-ui";
+import { Slot } from "expo-router";
 export { ErrorBoundary } from "expo-router";
 
 export const unstable_settings = {
   initialRouteName: "(tabs)",
 };
 
-SplashScreen.preventAutoHideAsync();
-
 export default function RootLayout() {
   return (
-    <Providers>
+    <UIProvider>
       <AppLayout>
         <Slot />
       </AppLayout>
-    </Providers>
+    </UIProvider>
   );
 }

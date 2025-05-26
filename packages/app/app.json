@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "rn-app",
-    "slug": "rn-app",
+    "name": "app",
+    "slug": "app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "app",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
@@ -15,11 +15,12 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "edgeToEdgeEnabled": true
     },
     "web": {
       "bundler": "metro",
-      "output": "single",
+      "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
@@ -33,12 +34,20 @@
           "backgroundColor": "#ffffff"
         }
       ],
-      "expo-font",
-      "expo-localization"
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/NotoSans-Regular.ttf",
+            "./assets/fonts/NotoSans-Bold.ttf",
+            "./assets/fonts/NotoSansJP-Regular.ttf",
+            "./assets/fonts/NotoSansJP-Bold.ttf"
+          ]
+        }
+      ]
     ],
     "experiments": {
-      "typedRoutes": true,
-      "reactServerFunctions": false
+      "typedRoutes": true
     }
   }
 }

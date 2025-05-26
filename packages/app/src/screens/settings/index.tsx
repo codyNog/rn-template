@@ -1,10 +1,8 @@
-import { SafeAreaView } from "ui/SafeAreaView";
-import { useSettingsScreen } from "./hooks";
+import { Divider, List } from "@codynog/rn-ui";
 import { Link } from "expo-router";
-import { ListItem } from "ui/ListItem";
-import { Bell, ChevronRight } from "ui/icons";
-import { Divider } from "ui/Divider";
-import { View } from "ui/View";
+import { SafeAreaView } from "react-native";
+import { View } from "react-native";
+import { useSettingsScreen } from "./hooks";
 
 const Screen = () => {
   useSettingsScreen();
@@ -12,10 +10,10 @@ const Screen = () => {
     <SafeAreaView>
       <Link href="/settings/notifications">
         <View>
-          <ListItem
-            leading={<Bell color={"$onSurfaceVariant"} />}
-            trailing={<ChevronRight color={"$onSurfaceVariant"} />}
-            headline="通知"
+          <List.Item
+            left={() => <List.Icon icon="bell" />}
+            right={() => <List.Icon icon="chevron-right" />}
+            title="通知"
           />
         </View>
       </Link>

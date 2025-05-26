@@ -9,7 +9,8 @@
       ".expo/**",
       "dist/**",
       ".wrangler/**",
-      "packages/shared/db/migrations/**"
+      "packages/shared/db/migrations/**",
+      "packages/app/ios/**"
     ]
   },
   "linter": {

@@ -1,9 +1,9 @@
-import { Text } from "ui/Text";
+import { Typography } from "@codynog/rn-ui";
 import { useSearchScreen } from "./hooks";
 
 const Screen = () => {
   useSearchScreen();
-  return <Text>Screen</Text>;
+  return <Typography>Screen</Typography>;
 };
 
 export default Screen;

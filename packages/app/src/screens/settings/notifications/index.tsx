@@ -1,11 +1,7 @@
-import { YStack } from "ui/Stack";
-import { useSettingsNotificationsScreen } from "./hooks";
-import { SafeAreaView } from "ui/SafeAreaView";
-import { Grid } from "ui/Grid";
-import { Text } from "ui/Text";
-import { TopAppBar } from "ui/TopAppBar";
-import { ArrowLeft } from "ui/icons";
+import { Appbar, Grid, Stack, Typography } from "@codynog/rn-ui";
 import { useRouter } from "expo-router";
+import { SafeAreaView } from "react-native";
+import { useSettingsNotificationsScreen } from "./hooks";
 
 const Screen = () => {
   useSettingsNotificationsScreen();
@@ -15,17 +11,15 @@ const Screen = () => {
   };
   return (
     <SafeAreaView>
-      <TopAppBar
-        headline="通知"
-        leadingIcon={
-          <ArrowLeft color={"$onSurfaceVariant"} onPress={handleBack} />
-        }
-      />
-      <YStack paddingTop="$4">
-        <Grid.Container>
-          <Text>通知</Text>
-        </Grid.Container>
-      </YStack>
+      <Appbar>
+        <Appbar.Content title="通知" />
+        <Appbar.Action icon="arrow-left" onPress={handleBack} />
+      </Appbar>
+      <Stack>
+        <Grid>
+          <Typography>通知</Typography>
+        </Grid>
+      </Stack>
     </SafeAreaView>
   );
 };

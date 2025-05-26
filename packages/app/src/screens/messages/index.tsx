@@ -1,17 +1,12 @@
+import { Typography } from "@codynog/rn-ui";
 import { Link } from "expo-router";
-import { Text } from "ui/Text";
-import { useMessagesScreen } from "./hooks";
-import { SafeAreaView } from "ui/SafeAreaView";
 
-const Screen = () => {
-  useMessagesScreen();
+export default function MessagesScreen() {
   return (
-    <SafeAreaView>
+    <>
       <Link href="/messages/1">
-        <Text>メッセージ</Text>
+        <Typography>メッセージ</Typography>
       </Link>
-    </SafeAreaView>
+    </>
   );
-};
-
-export default Screen;
+}

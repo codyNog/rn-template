@@ -188,7 +188,7 @@ dist
 packages/gen
 packages/ui
 
-.version.json
+.ui-version.json
 
 # ai-rules
 ai-docs/**

@@ -1,10 +1,10 @@
-import type { FC, ReactNode } from "react";
-import i18next from "i18next";
-import { initReactI18next, useTranslation } from "react-i18next";
 import * as Localization from "expo-localization";
 import enUS from "gen/i18n/en-US";
 import jaJP from "gen/i18n/ja-JP";
 import type { DynamicKey, I18nKey } from "gen/i18n/types";
+import i18next from "i18next";
+import type { FC, ReactNode } from "react";
+import { initReactI18next, useTranslation } from "react-i18next";
 
 // i18nextの初期化
 i18next.use(initReactI18next).init({
