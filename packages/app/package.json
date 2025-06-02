@@ -24,7 +24,7 @@
     "preset": "jest-expo"
   },
   "dependencies": {
-    "@codynog/rn-ui": "^2025.5.8",
+    "@codynog/rn-ui": "^2025.6.8",
     "@expo/metro-runtime": "~5.0.4",
     "@expo/vector-icons": "^14.1.0",
     "@hookform/resolvers": "^3.10.0",

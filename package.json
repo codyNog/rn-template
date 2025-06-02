@@ -1,9 +1,6 @@
 {
   "name": "npm-workspace",
   "module": "index.ts",
-  "optionalDependencies": {
-    "@codynog/ai-rules": "^2025.4.13"
-  },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@codynog/csv-i18n": "^2025.4.1",
@@ -39,7 +36,7 @@
   "scripts": {
     "preinstall": "npx only-allow npm",
     "postinstall": "node -e \"process.exit(process.env.CI ? 0 : 1)\" && npm run postinstall:ci || npm run postinstall:nonci",
-    "postinstall:ci": "npm run gen && npm run ui:extract",
+    "postinstall:ci": "npm run gen",
     "postinstall:nonci": "npm run postinstall:ci && npx @codynog/ai-rules",
     "ui:extract": "cody-rn-ui --output packages/ui",
     "app": "npm run --workspace=app",
@@ -70,7 +67,9 @@
     "watch:i18n": "csv-i18n --input i18n --output packages/gen/i18n --watch"
   },
   "type": "module",
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "dependencies": {
     "@babel/runtime": "^7.27.1",
     "@codynog/rn-ui": "^2025.5.3",

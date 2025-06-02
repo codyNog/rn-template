@@ -199,3 +199,4 @@ ai-docs/**
 .roo/rules-*
 .github/copilot-instructions.md
 .roomodes
+.claude

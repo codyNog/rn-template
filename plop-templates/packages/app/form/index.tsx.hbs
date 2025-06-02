@@ -1,3 +1,4 @@
+'use client';
 import { use{{pascalCase name}}Form } from "./hooks";
 import type { Props } from "./types";
 import { Button, Grid, GridItem, TextField, VisuallyHidden } from "@codynog/rn-ui";
@@ -30,7 +31,7 @@ export const {{pascalCase name}}Form = (props: Props) => {
         </GridItem>
       </VisuallyHidden>
       <GridItem span={4}>
-        <Button onPress={onSubmit}>{t("submit" as I18nKey)}</Button>
+        <Button onPress={onSubmit}>{t("common.submit")}</Button>
       </GridItem>
     </Grid>
   );

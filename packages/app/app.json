@@ -34,17 +34,7 @@
           "backgroundColor": "#ffffff"
         }
       ],
-      [
-        "expo-font",
-        {
-          "fonts": [
-            "./assets/fonts/NotoSans-Regular.ttf",
-            "./assets/fonts/NotoSans-Bold.ttf",
-            "./assets/fonts/NotoSansJP-Regular.ttf",
-            "./assets/fonts/NotoSansJP-Bold.ttf"
-          ]
-        }
-      ]
+      "expo-font"
     ],
     "experiments": {
       "typedRoutes": true

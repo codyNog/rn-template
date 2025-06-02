@@ -1,5 +1,5 @@
 import { getI18n } from "shared/libs/i18n/server";
-import { Text } from "react-native";
+import { Typography } from "@codynog/rn-ui";
 
 // biome-ignore lint:
 type Props = {
@@ -8,5 +8,5 @@ type Props = {
 // biome-ignore lint:
 export const {{pascalCase name}} = async ({}: Props) => {
     const _t = await getI18n();
-return <Text>{{pascalCase name}}</Text>
+return <Typography>{{pascalCase name}}</Typography>
 };

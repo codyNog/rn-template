@@ -1,6 +1,6 @@
 "use client";
 
-import { useQuery } from "@tanstack/react-query";
+import { useSuspenseQuery } from "@tanstack/react-query";
 
 const storage =
   process.env.PLATFORM === "mobile"
@@ -8,7 +8,7 @@ const storage =
     : (await import("../../browser/storage")).browserStorage;
 
 export const useBrowserStorage = <T>(key: string, fallbackData: T) => {
-  const get = useQuery({
+  const get = useSuspenseQuery({
     queryKey: [key],
     queryFn: () => storage.get<T>(key).catch(() => fallbackData),
   });
