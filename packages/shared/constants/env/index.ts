@@ -33,3 +33,5 @@ export const DATABASE_PORT =
 export const DATABASE_URL = `postgresql://${DATABASE_USER}:${DATABASE_PASSWORD}@${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_NAME}`;
 
 export const SERVER_URL = process.env.SERVER_URL || "http://localhost:8787";
+
+export const WEB_BASE_URL = process.env.WEB_BASE_URL || "http://0.0.0.0:3000";

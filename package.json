@@ -49,7 +49,7 @@
     "lint:spell": "cspell . --no-progress",
     "storybook": "echo Please start in each environment",
     "format": "biome check --write .",
-    "dev": "npx run-p \"web\" \"server:dev\"",
+    "dev": "npx run-p \"web:dev\" \"server:dev\"",
     "server:dev": "npm run --workspace=server dev",
     "test": "vitest run",
     "test:ui": "vitest --ui",
@@ -67,7 +67,8 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "web:dev": "npm run --workspace=web dev"
   },
   "type": "module",
   "workspaces": ["packages/*"],
