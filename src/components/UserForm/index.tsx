@@ -1,11 +1,11 @@
-import { useUserForm } from "@/components/UserForm/hooks";
-import type { Props } from "@/components/UserForm/types";
 import { Button, Stack, TextField, VisuallyHidden } from "@codynog/rn-ui";
 import type { I18nKey } from "gen/i18n/types";
 import { Controller } from "react-hook-form";
+import { useUserForm } from "./hooks";
+import type { Props } from "./types";
 
 /**
- * Form Component for create or update Foo.
+ * Form Component for create or update User.
  * @param {Props} props {@link Props}
  */
 export const UserForm = (props: Props) => {
@@ -27,7 +27,43 @@ export const UserForm = (props: Props) => {
           </VisuallyHidden>
         )}
       />
-      <Button onPress={onSubmit}>{t("submit" as I18nKey)}</Button>
+      <Controller
+        control={control}
+        name="name"
+        render={({ field }) => (
+          <TextField
+            {...field}
+            label={t("form.name" as I18nKey)}
+            supportingText={t("form.namePlaceholder" as I18nKey)}
+            errorMessage={
+              errors.name?.message && t(errors.name.message as I18nKey)
+            }
+            onChangeText={(text) => {
+              field.onChange(text);
+            }}
+          />
+        )}
+      />
+      <Controller
+        control={control}
+        name="email"
+        render={({ field }) => (
+          <TextField
+            {...field}
+            label={t("form.email" as I18nKey)}
+            supportingText={t("form.emailPlaceholder" as I18nKey)}
+            keyboardType="email-address"
+            autoCapitalize="none"
+            errorMessage={
+              errors.email?.message && t(errors.email.message as I18nKey)
+            }
+            onChangeText={(text) => {
+              field.onChange(text);
+            }}
+          />
+        )}
+      />
+      <Button onPress={onSubmit}>{t("form.submit" as I18nKey)}</Button>
     </Stack>
   );
 };

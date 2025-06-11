@@ -1,4 +1,4 @@
-import { UserForm } from "@/components/UserForm";
+import { UserForm } from "src/components/UserForm";
 import { useUsersNewScreen } from "./hooks";
 
 const Screen = () => {

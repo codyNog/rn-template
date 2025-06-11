@@ -190,6 +190,9 @@ packages/ui
 
 .ui-version.json
 
+# Convex auto-generated files
+_generated/
+
 # ai-rules
 ai-docs/**
 .cursor/rules

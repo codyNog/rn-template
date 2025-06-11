@@ -1,6 +1,6 @@
-import { UserList } from "@/components/UserList";
 import { Suspense } from "react";
 import { Text } from "react-native";
+import { UserList } from "src/components/UserList";
 import { useUsersScreen } from "./hooks";
 
 const Screen = () => {

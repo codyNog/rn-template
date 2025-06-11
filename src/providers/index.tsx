@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useFonts } from "expo-font";
 import type { ReactNode } from "react";
 import { useColorScheme } from "react-native";
+import { ConvexAppProvider } from "shared/libs/convex";
 import { I18nProvider } from "shared/libs/i18n";
 
 type ProvidersProps = {
@@ -32,12 +33,14 @@ export const Providers = ({ children, locale }: ProvidersProps) => {
   // フォントが読み込まれるまで何も表示しないか、ローディング表示を出す
   // ここでは一旦、読み込み完了後に子要素を表示するようにするね
   return (
-    <UIProvider keyColor={KEY_COLOR}>
-      <I18nProvider locale={locale}>
-        <QueryClientProvider client={client}>
-          {loaded ? children : null}
-        </QueryClientProvider>
-      </I18nProvider>
-    </UIProvider>
+    <ConvexAppProvider>
+      <UIProvider keyColor={KEY_COLOR}>
+        <I18nProvider locale={locale}>
+          <QueryClientProvider client={client}>
+            {loaded ? children : null}
+          </QueryClientProvider>
+        </I18nProvider>
+      </UIProvider>
+    </ConvexAppProvider>
   );
 };

@@ -1,15 +1,14 @@
-import { useSuspenseQuery } from "@tanstack/react-query";
-import { rpcClient } from "shared/rpc";
+import { useUsers } from "shared/libs/convex";
 import type { Props } from "../types";
 
-// biome-ignore lint:
-export const useUserList = ({}: Props) => {
-  const { data: users } = useSuspenseQuery({
-    queryKey: ["users"],
-    queryFn: async () => {
-      return (await rpcClient.users.$get({ query: {} })).json();
-    },
-  });
+export const useUserList = (props: Props) => {
+  const users = useUsers();
 
-  return { users };
+  console.log(users);
+
+  return {
+    users,
+    isLoading: users === undefined,
+    onUserSelect: props.onUserSelect,
+  };
 };

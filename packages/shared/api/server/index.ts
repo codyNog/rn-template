@@ -1,6 +1,6 @@
 import { Hono } from "hono";
-import type { Bindings } from "../types";
 import { cors } from "hono/cors";
+import type { Bindings } from "../types";
 
 export const server = new Hono<{ Bindings: Bindings }>().use(
   "/*",

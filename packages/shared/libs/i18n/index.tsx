@@ -10,10 +10,10 @@ import { initReactI18next, useTranslation } from "react-i18next";
 // i18nextの初期化
 i18next.use(initReactI18next).init({
   resources: {
-    "en-US": {
+    en: {
       translation: enUS,
     },
-    "ja-JP": {
+    ja: {
       translation: jaJP,
     },
   },

@@ -5,6 +5,7 @@
       ".next/**",
       "*.css.d.ts",
       "gen/**",
+      "_generated/**",
       ".vscode/**",
       ".expo/**",
       "dist/**",

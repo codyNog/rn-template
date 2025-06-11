@@ -1,2 +1,2 @@
-import Screen from "@/screens/users";
+import Screen from "src/screens/users";
 export default Screen;

@@ -1,6 +1,6 @@
-import { Providers } from "@/providers";
 import { AppLayout } from "@codynog/rn-ui";
 import { Slot } from "expo-router";
+import { Providers } from "src/providers";
 export { ErrorBoundary } from "expo-router";
 
 export const unstable_settings = {

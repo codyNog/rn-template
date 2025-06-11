@@ -1,6 +1,6 @@
-import { Providers } from "@/providers";
 import { AppLayout } from "@codynog/rn-ui";
-import { router, Slot } from "expo-router";
+import { Slot, router } from "expo-router";
+import { Providers } from "src/providers";
 
 export default function UsersLayout() {
   return (

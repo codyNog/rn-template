@@ -1,2 +1,2 @@
-import UsersLayout from "@/layouts/users";
+import UsersLayout from "src/layouts/users";
 export default UsersLayout;

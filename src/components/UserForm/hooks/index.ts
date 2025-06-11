@@ -1,8 +1,8 @@
-import type { Props, UserFormValues } from "@/components/UserForm/types";
-import { UserFormResolver } from "@/components/UserForm/types";
 import { useCallback } from "react";
 import { useForm } from "react-hook-form";
 import { useI18n } from "shared/libs/i18n";
+import type { Props, UserFormValues } from "src/components/UserForm/types";
+import { UserFormResolver } from "src/components/UserForm/types";
 
 export const useUserForm = ({ action, defaultValues }: Props) => {
   const {

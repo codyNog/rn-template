@@ -1,2 +1,2 @@
-import NotFoundScreen from "@/screens/not-found";
+import NotFoundScreen from "src/screens/not-found";
 export default NotFoundScreen;

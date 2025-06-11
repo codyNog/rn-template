@@ -1,23 +1,31 @@
 "use client";
-import { Typography } from "@codynog/rn-ui";
+import { Grid, GridItem, Typography } from "@codynog/rn-ui";
+import { Link } from "expo-router";
 import { View } from "react-native";
 import { useUserList } from "./hooks";
-import _styles from "./index.module.css";
 import type { Props } from "./types";
 
 export const UserList = (props: Props) => {
   const { users } = useUserList(props);
   return (
-    <View>
+    <Grid>
       {users?.map((user) => {
         return (
-          <View key={user.id}>
-            <Typography>ID: {user.id}</Typography>
-            <Typography>Created: {user.createdAt}</Typography>
-            <Typography>Updated: {user.updatedAt}</Typography>
-          </View>
+          <Link href={`/users/${user._id}`} key={user._id}>
+            <GridItem span={4}>
+              <Typography>ID: {user._id}</Typography>
+              <Typography>Name: {user.name || "No name"}</Typography>
+              <Typography>Email: {user.email || "No email"}</Typography>
+              <Typography>
+                Created: {new Date(user.createdAt).toLocaleString()}
+              </Typography>
+              <Typography>
+                Updated: {new Date(user.updatedAt).toLocaleString()}
+              </Typography>
+            </GridItem>
+          </Link>
         );
       })}
-    </View>
+    </Grid>
   );
 };
