@@ -1,6 +1,6 @@
 import { router } from "expo-router";
 import { useCallback } from "react";
-import { useCreateUser } from "shared/libs/convex";
+import { useCreateUser } from "packages/shared/libs/convex/hooks";
 import type { UserFormValues } from "src/components/UserForm/types";
 
 export const useUsersNewScreen = () => {

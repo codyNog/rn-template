@@ -42,6 +42,7 @@
     "db:generate": "drizzle-kit generate --config=drizzle.config.ts",
     "db:push": "drizzle-kit push",
     "db:migrate": "drizzle-kit migrate",
-    "db:seed": "node db/seed/index.ts"
+    "db:seed": "node db/seed/index.ts",
+    "dev": "convex dev --local"
   }
 }

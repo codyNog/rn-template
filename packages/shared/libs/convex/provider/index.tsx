@@ -1,7 +1,6 @@
-import { ConvexProvider } from "convex/react";
+import { ConvexProvider, ConvexReactClient } from "convex/react";
 import type { ReactNode } from "react";
-import { CONVEX_URL } from "../../constants/env";
-import { createConvexClient } from "./client";
+import { CONVEX_URL } from "../../../constants/env";
 
 type ConvexAppProviderProps = {
   children: ReactNode;
@@ -14,7 +13,9 @@ export const ConvexAppProvider = ({ children }: ConvexAppProviderProps) => {
     );
   }
 
-  const client = createConvexClient(CONVEX_URL);
+  const client = new ConvexReactClient(CONVEX_URL, {
+    unsavedChangesWarning: false,
+  });
 
   return <ConvexProvider client={client}>{children}</ConvexProvider>;
 };

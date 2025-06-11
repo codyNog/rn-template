@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useFonts } from "expo-font";
 import type { ReactNode } from "react";
 import { useColorScheme } from "react-native";
-import { ConvexAppProvider } from "shared/libs/convex";
+import { ConvexAppProvider } from "packages/shared/libs/convex/provider";
 import { I18nProvider } from "shared/libs/i18n";
 
 type ProvidersProps = {

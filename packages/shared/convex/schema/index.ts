@@ -1,6 +1,8 @@
+import { defineSchema } from "convex/server";
+
 import { defineTable } from "convex/server";
 import { type Infer, v } from "convex/values";
-import type { Id } from "../../../convex/convex/_generated/dataModel";
+import type { Id } from "../_generated/dataModel";
 
 const userSchema = v.object({
   name: v.optional(v.string()),
@@ -18,3 +20,5 @@ export type UserId = Id<"users">;
 export const schemas = {
   users,
 };
+
+export default defineSchema(schemas, { schemaValidation: true });

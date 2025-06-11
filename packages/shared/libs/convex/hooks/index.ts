@@ -1,13 +1,13 @@
 import { useMutation, useQuery } from "convex/react";
-import { api } from "../../../convex/convex/_generated/api";
-import type { Id } from "../../../convex/convex/_generated/dataModel";
+import { api } from "../../../convex/_generated/api";
+import type { UserId } from "../../../convex/schema";
 
 export const useUsers = () => {
   return useQuery(api.users.getUsers);
 };
 
 export const useUser = (id: string) => {
-  return useQuery(api.users.getUserById, { id: id as Id<"users"> });
+  return useQuery(api.users.getUserById, { id: id as UserId });
 };
 
 export const useCreateUser = () => {

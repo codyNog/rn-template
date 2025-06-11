@@ -1,4 +1,4 @@
-import { useUsers } from "shared/libs/convex";
+import { useUsers } from "packages/shared/libs/convex/hooks";
 import type { Props } from "../types";
 
 export const useUserList = (props: Props) => {
