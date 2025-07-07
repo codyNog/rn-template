@@ -37,3 +37,9 @@ export const SERVER_URL = process.env.SERVER_URL || "http://localhost:8787";
 export const WEB_BASE_URL = process.env.WEB_BASE_URL || "http://0.0.0.0:3000";
 
 export const CONVEX_URL = process.env.CONVEX_URL || "http://localhost:3210";
+
+export const SUPABASE_PROJECT_ID = process.env.SUPABASE_PROJECT_ID || "";
+export const SUPABASE_URL = SUPABASE_PROJECT_ID
+  ? `https://${SUPABASE_PROJECT_ID}.supabase.co`
+  : process.env.SUPABASE_URL || "";
+export const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY || "";
