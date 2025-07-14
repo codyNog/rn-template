@@ -1,2 +1,2 @@
-import RootLayout from "src/layouts";
+import RootLayout from "@/layouts";
 export default RootLayout;

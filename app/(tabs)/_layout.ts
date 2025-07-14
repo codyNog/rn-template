@@ -1,2 +1,2 @@
-import TabLayout from "src/layouts/(tabs)";
+import TabLayout from "@/layouts/(tabs)";
 export default TabLayout;

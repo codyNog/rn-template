@@ -1,2 +1,2 @@
-import Screen from "src/screens/settings";
+import Screen from "@/screens/settings";
 export default Screen;

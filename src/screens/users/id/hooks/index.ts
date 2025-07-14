@@ -1,8 +1,8 @@
 import { useLocalSearchParams, useRouter } from "expo-router";
-import type { UserId } from "packages/shared/convex/schema";
-import { useUpdateUser, useUser } from "packages/shared/libs/convex/hooks";
+import type { UserId } from "shared/convex/schema";
+import { useUpdateUser, useUser } from "shared/libs/convex/hooks";
 import { useCallback } from "react";
-import type { UserFormValues } from "src/components/UserForm/types";
+import type { UserFormValues } from "@/components/UserForm/types";
 
 export const useUsersIdScreen = () => {
   const { id, edit } = useLocalSearchParams<{ id: string; edit?: string }>();

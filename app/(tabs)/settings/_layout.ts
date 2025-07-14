@@ -1,2 +1,2 @@
-import TabLayout from "src/layouts/settings";
+import TabLayout from "@/layouts/settings";
 export default TabLayout;

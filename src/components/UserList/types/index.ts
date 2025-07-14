@@ -1,4 +1,4 @@
-import type { User } from "packages/shared/convex/schema";
+import type { User } from "shared/convex/schema";
 
 // UserListコンポーネントのProps型
 export type Props = {

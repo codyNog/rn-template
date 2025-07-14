@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import type { User } from "packages/shared/convex/schema";
+import type { User } from "shared/convex/schema";
 import { z } from "zod";
 
 const UserFormValuesSchema = z.object({
