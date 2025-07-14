@@ -1,10 +1,4 @@
-import {
-  Button,
-  Grid,
-  GridItem,
-  TextField,
-  VisuallyHidden,
-} from "@codynog/rn-ui";
+import { Button, Grid, GridItem, TextField, VisuallyHidden } from "ui";
 import type { I18nKey } from "gen/i18n/types";
 import { Controller } from "react-hook-form";
 import { useFooForm } from "./hooks";

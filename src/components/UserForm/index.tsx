@@ -1,4 +1,4 @@
-import { Button, Stack, TextField, VisuallyHidden } from "@codynog/rn-ui";
+import { Button, Stack, TextField, VisuallyHidden } from "ui";
 import type { I18nKey } from "gen/i18n/types";
 import { Controller } from "react-hook-form";
 import { useUserForm } from "./hooks";

@@ -1,4 +1,4 @@
-import { Appbar, Grid, Stack, Typography } from "@codynog/rn-ui";
+import { Appbar, Grid, Stack, Typography } from "ui";
 import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native";
 import { useSettingsNotificationsScreen } from "./hooks";

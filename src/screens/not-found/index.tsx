@@ -1,4 +1,4 @@
-import { Typography } from "@codynog/rn-ui";
+import { Typography } from "ui";
 import { Stack } from "expo-router";
 
 export default function NotFoundScreen() {

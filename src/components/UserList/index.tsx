@@ -1,5 +1,5 @@
 "use client";
-import { Grid, GridItem, Typography } from "@codynog/rn-ui";
+import { Grid, GridItem, Typography } from "ui";
 import { Link } from "expo-router";
 import { View } from "react-native";
 import { useUserList } from "./hooks";

@@ -1,4 +1,4 @@
-import { Divider, List } from "@codynog/rn-ui";
+import { Divider, List } from "ui";
 import { Link } from "expo-router";
 import { SafeAreaView } from "react-native";
 import { View } from "react-native";

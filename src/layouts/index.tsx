@@ -1,4 +1,4 @@
-import { AppLayout } from "@codynog/rn-ui";
+import { AppLayout } from "ui";
 import { Slot } from "expo-router";
 import { Providers } from "src/providers";
 export { ErrorBoundary } from "expo-router";

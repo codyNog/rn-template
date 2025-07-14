@@ -1,4 +1,4 @@
-import { Typography } from "@codynog/rn-ui";
+import { Typography } from "ui";
 import { Link } from "expo-router";
 import { useI18n } from "shared/libs/i18n";
 

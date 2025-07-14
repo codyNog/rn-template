@@ -187,6 +187,7 @@ dist
 
 packages/gen
 packages/ui
+!packages/ui/package.json
 
 .ui-version.json
 

@@ -1,4 +1,4 @@
-import { AppLayout } from "@codynog/rn-ui";
+import { AppLayout } from "ui";
 import { Slot, router } from "expo-router";
 import { Providers } from "src/providers";
 

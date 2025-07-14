@@ -1,4 +1,4 @@
-import { Button, Stack, Typography } from "@codynog/rn-ui";
+import { Button, Stack, Typography } from "ui";
 import { useRouter } from "expo-router";
 import { View } from "react-native";
 import { UserForm } from "../../../components/UserForm";
