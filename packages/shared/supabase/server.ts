@@ -1,7 +1,7 @@
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
-import type { Database } from "./types/database.types";
 import { supabaseConfig } from "./config";
+import type { Database } from "./types/database.types";
 
 export const createSupabaseServerClient = async () => {
   const cookieStore = await cookies();
@@ -26,7 +26,7 @@ export const createSupabaseServerClient = async () => {
           }
         },
       },
-    }
+    },
   );
 };
 
@@ -45,6 +45,6 @@ export const createSupabaseServerComponentClient = async () => {
           // Server Components cannot set cookies
         },
       },
-    }
+    },
   );
 };

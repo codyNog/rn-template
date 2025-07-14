@@ -1,6 +1,6 @@
-import { AppLayout } from "ui";
 import { Slot, router } from "expo-router";
 import { Providers } from "src/providers";
+import { AppLayout } from "ui";
 
 export default function UsersLayout() {
   return (

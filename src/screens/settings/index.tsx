@@ -1,7 +1,7 @@
-import { Divider, List } from "ui";
 import { Link } from "expo-router";
 import { SafeAreaView } from "react-native";
 import { View } from "react-native";
+import { Divider, List } from "ui";
 import { useSettingsScreen } from "./hooks";
 
 const Screen = () => {

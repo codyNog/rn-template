@@ -1,7 +1,7 @@
 "use client";
-import { Grid, GridItem, Typography } from "ui";
 import { Link } from "expo-router";
 import { View } from "react-native";
+import { Grid, GridItem, Typography } from "ui";
 import { useUserList } from "./hooks";
 import type { Props } from "./types";
 

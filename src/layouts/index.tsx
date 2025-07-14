@@ -1,6 +1,6 @@
-import { AppLayout } from "ui";
 import { Slot } from "expo-router";
 import { Providers } from "src/providers";
+import { AppLayout } from "ui";
 export { ErrorBoundary } from "expo-router";
 
 export const unstable_settings = {

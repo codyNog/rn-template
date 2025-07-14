@@ -1,11 +1,11 @@
-import { UIProvider } from "ui";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useFonts } from "expo-font";
+import { ConvexAppProvider } from "packages/shared/libs/convex/provider";
 import type { ReactNode } from "react";
 import { useColorScheme } from "react-native";
-import { ConvexAppProvider } from "packages/shared/libs/convex/provider";
 import { I18nProvider } from "shared/libs/i18n";
+import { UIProvider } from "ui";
 
 type ProvidersProps = {
   children: ReactNode;

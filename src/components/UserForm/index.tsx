@@ -1,6 +1,6 @@
-import { Button, Stack, TextField, VisuallyHidden } from "ui";
 import type { I18nKey } from "gen/i18n/types";
 import { Controller } from "react-hook-form";
+import { Button, Stack, TextField, VisuallyHidden } from "ui";
 import { useUserForm } from "./hooks";
 import type { Props } from "./types";
 

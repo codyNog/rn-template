@@ -1,6 +1,6 @@
-import { Appbar, Grid, Stack, Typography } from "ui";
 import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native";
+import { Appbar, Grid, Stack, Typography } from "ui";
 import { useSettingsNotificationsScreen } from "./hooks";
 
 const Screen = () => {
