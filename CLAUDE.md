@@ -21,3 +21,7 @@ See @.claude/rules/index.md for base rules.
 
 # Local project rules
 @.claude/local/index.md
+
+# README
+
+@README.md
