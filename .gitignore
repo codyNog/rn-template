@@ -186,7 +186,7 @@ dist
 # packages/gen
 
 packages/gen
-packages/ui
+packages/ui/*
 !packages/ui/package.json
 
 .ui-version.json
