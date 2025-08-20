@@ -1,0 +1,4 @@
+project_id = "sandbox"
+
+[migrations]
+path = "./packages/shared/supabase/migrations"

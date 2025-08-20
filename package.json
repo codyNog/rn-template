@@ -64,6 +64,7 @@
     "gen:ui": "npx -y @omni-stove/ui --extract packages/ui",
     "gen:i18n": "csv-i18n --input i18n --output packages/gen/i18n",
     "gen:schema": "npm run shared db:generate && npm run server local:migration",
+    "gen:supabase": "supabase gen types typescript --project-id $SUPABASE_PROJECT_ID > packages/shared/supabase/types/database.types.ts",
     "knip": "knip",
     "build-check": "npm run --if-present --workspaces build-check",
     "update": "npm-check-updates -u && npm run --workspaces update",
